@@ -73,10 +73,13 @@
             cursor: pointer;
             font-size: 16px;
             font-weight: 600;
-            color: var(--color-dark-text);
             transition: color 0.2s, background-color 0.2s, border-radius 0.2s;
             border-radius: 8px;
-            text-decoration: none; /* Dành cho thẻ <a> */
+            
+            /* SỬA LỖI HIỂN THỊ CỦA THẺ <a> */
+            text-decoration: none; /* Xóa gạch chân */
+            display: inline-block; /* Cho phép áp dụng padding/margin như button */
+            color: var(--color-dark-text); /* Đảm bảo màu chữ chính xác */
         }
 
         .header__button:hover {
@@ -171,7 +174,7 @@
 
         <nav class="header__nav">
             <button class="header__button">Home</button>
-                        <a href="learn.html" class="header__button" style="text-decoration: none; display: flex; align-items: center; justify-content: center;">Learn</a>
+                        <a href="learn.html" class="header__button">Learn</a>
             <button class="header__button">Communication</button>
             <button class="header__button">Personal Information</button>
         </nav>
@@ -191,4 +194,5 @@
 
 </body>
 </html>
+
 

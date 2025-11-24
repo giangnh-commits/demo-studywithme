@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission - Trang Học Tập</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary-bg: #D7F9F1;
+            --color-dark-text: #1a1a1a;
+            --color-footer-bg: #f8f8f8;
+            --color-logo-bg: #ffffff;
+            --color-logo-border: #FFDAB9;
+            --color-action-button: #FFBFA9; /* Màu cam nhạt cho icon nhiệm vụ */
+            --color-action-button-hover: #FF9EBB;
+            --color-progress-fill: #32CD32;
+            --color-progress-empty: #E0E0E0;
+            --font-main: 'Inter', sans-serif;
+            --footer-height: 72px;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-main);
+            color: var(--color-dark-text);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .header__logo {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: var(--color-logo-bg);
+            border-radius: 9999px;
+            border: 1px solid var(--color-logo-border);
+            box-shadow: 0 0 10px rgba(255, 218, 185, 0.5);
+        }
+        .header__logo-image {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #F08080;
+            display: inline-block;
+        }
+        .header__logo-text {
+            margin-left: 10px;
+            font-weight: 600;
+            color: var(--color-dark-text);
+        }
+        .header__nav {
+            display: flex;
+            gap: 20px;
+        }
+        .header__button {
+            background: none;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: color 0.2s, background-color 0.2s, border-radius 0.2s;
+            border-radius: 8px;
+            text-decoration: none; 
+            display: inline-block; 
+            color: var(--color-dark-text);
+        }
+        .header__button:hover {
+            color: white;
+            background-color: #8db5ad;
+            border-radius: 8px;
+        }
+        .main {
+            flex-grow: 1;
+            background-color: var(--color-primary-bg);
+            display: grid;
+            padding: 40px 5%;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+        }
+        .main__mission-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; 
+            padding-top: 20px;
+        }
+        
+        .mission-item-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px; 
+        }
+        
+        .mission__section-title {
+            font-size: 16px; 
+            font-weight: 700;
+            margin: 0; 
+            color: var(--color-dark-text);
+        }
+        .mission__detail-text {
+            font-size: 16px; 
+            margin: 0; 
+            line-height: 1.5;
+        }
+
+        .mission__task-list {
+            list-style: none; 
+            padding-left: 0; 
+            margin-top: 0; 
+        }
+        .mission__task-list li {
+            font-size: 16px;
+            line-height: 1.8;
+            display: flex; 
+            align-items: flex-start;
+        }
+        .task-icon {
+            margin-right: 8px; 
+            color: var(--color-action-button); 
+            font-weight: 800;
+        }
+
+        .progress-container {
+            width: 80%;
+            height: 10px;
+            background-color: var(--color-progress-empty);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 40%; 
+            background-color: var(--color-progress-fill);
+            transition: width 0.5s ease;
+            border-radius: 5px;
+        }
+        .main__illustration {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .main__illustration-image {
+            width: 100%;
+            max-width: 120px;
+            height: auto;
+        }
+        .footer {
+            height: var(--footer-height);
+            background-color: var(--color-footer-bg);
+            color: var(--color-dark-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            padding: 0 5%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .footer__contact-info {
+            display: flex;
+            gap: 30px;
+        }
+        @media (max-width: 1024px) {
+            .main {
+                grid-template-columns: 1fr;
+                justify-content: center;
+            }
+            .main__illustration {
+                order: -1; 
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            .main__mission-details {
+                max-width: 500px;
+                margin: 0 auto;
+                width: 100%;
+            }
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 15px 5%;
+            }
+            .header__nav {
+                margin-top: 15px;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                align-items: center;
+            }
+            .header__button {
+                width: 100%;
+                text-align: center;
+            }
+            .footer__contact-info {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <figure class="header__logo">
+            <div class="header__logo-image"></div>
+            <figcaption class="header__logo-text">Logo</figcaption>
+        </figure>
+        <nav class="header__nav">
+            <a href="index.html" class="header__button">Home</a>
+            <a href="learn.html" class="header__button">Learn</a> 
+            <button class="header__button">Communication</button>
+            <button class="header__button">Personal Information</button>
+        </nav>
+    </header>
+    <main class="main"> 
+        <div class="main__mission-details">
+            
+            <div class="mission-item-group">
+                <h3 class="mission__section-title">Name mission</h3>
+                <p class="mission__detail-text">Complete 3 units in one week</p>
+            </div>
+
+            <div class="mission-item-group">
+                <h3 class="mission__section-title">Deadline:</h3>
+                <p class="mission__detail-text">Sunday (03/08/2025)</p>
+            </div>
+
+            <div class="mission-item-group">
+                <h3 class="mission__section-title">Learning progress: 60%</h3>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 60%;"></div> 
+                </div>
+            </div>
+
+            <div class="mission-item-group">
+                <h3 class="mission__section-title">Action:</h3>
+                <ul class="mission__task-list">
+                    <li><span class="task-icon">★</span> Learn 10 new words every day</li>
+                    <li><span class="task-icon">★</span> Practice speaking 10 short sentences</li>
+                    <li><span class="task-icon">★</span> Write 3 short letters on free topics</li>
+                </ul>
+            </div>
+
+        </div>
+        <section class="main__illustration">
+            <img src="5713894_56155.svg" alt="Hình minh họa bàn làm việc và mục tiêu" class="main__illustration-image">
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__contact-info">
+            <span>Email: giangnguyen@studysite.com</span>
+            <span>Số điện thoại: 0363 637 899</span>
+        </div>
+    </footer>
+</body>
+</html>

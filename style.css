@@ -201,13 +201,13 @@ body, html {
     gap: 5px;
 }
 .mission__section-title {
-    font-size: 16px;
+    font-size: 32px;
     font-weight: 700;
     margin: 0;
     color: var(--color-dark-text);
 }
 .mission__detail-text {
-    font-size: 16px;
+    font-size: 32px;
     margin: 0;
     line-height: 1.5;
 }
@@ -217,7 +217,7 @@ body, html {
     margin-top: 0;
 }
 .mission__task-list li {
-    font-size: 16px;
+    font-size: 32px;
     line-height: 1.8;
     display: flex;
     align-items: flex-start;
@@ -269,7 +269,7 @@ body, html {
     /* Đảm bảo ảnh luôn ở trên cùng trên mobile/tablet */
     .main__illustration, .main__content {
         order: -1 !important; 
-        max-width: 400px;
+        max-width: 500px;
         margin: 0 auto;
     }
     .main__sidebar, .main__mission-details {
@@ -307,3 +307,4 @@ body, html {
         text-align: center;
     }
 }
+

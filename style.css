@@ -104,12 +104,26 @@ body, html {
     margin-top: 0;
 }
 
-/* --- LEARN PAGE STYLES --- */
+/* --- LEARN PAGE STYLES (Ảnh bên trái, kích thước tương xứng 4 nút) --- */
 .main.learn-page {
     background-color: var(--color-primary-bg-home);
-    display: grid;
-    grid-template-columns: 1fr 3fr;
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: flex-start; /* Căn trên cùng */
+    padding: 40px 5%;
     gap: 40px;
+}
+.main__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    padding: 20px;
+    overflow: hidden;
+    order: 1; /* Nằm bên trái */
+    max-width: 250px; /* Bằng kích thước chiều rộng của các nút */
+    width: 100%;
 }
 .main__sidebar {
     display: flex;
@@ -117,19 +131,17 @@ body, html {
     gap: 20px;
     padding-top: 50px;
     align-items: center;
-}
-.main__content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    overflow: hidden;
+    order: 2; /* Nằm bên phải */
+    max-width: 250px; 
+    width: 100%;
 }
 .main__illustration-image {
     width: 100%;
-    max-width: 120px;
+    max-width: 150px; /* Ảnh nhỏ hơn, tương xứng với kích thước nút */
     height: auto;
     border-radius: 16px;
+    object-fit: contain; 
+    margin-top: 20px;
 }
 .action-button {
     background-color: var(--color-action-button);
@@ -154,18 +166,34 @@ body, html {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* --- MISSION PAGE STYLES --- */
+
+/* --- MISSION PAGE STYLES (Ảnh bên trái, tương xứng với text) --- */
 .main.mission-page {
     background-color: var(--color-primary-bg-mission);
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex; /* Dùng Flexbox */
+    flex-direction: row; /* Xếp theo hàng ngang */
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 5%;
     gap: 40px;
+}
+.main__illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    order: 1; /* Khối ảnh nằm bên trái */
+    max-width: 300px; /* Giới hạn kích thước ảnh */
+    width: 100%;
 }
 .main__mission-details {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding-top: 20px;
+    order: 2; /* Khối text chi tiết nhiệm vụ nằm bên phải */
+    max-width: 500px; /* Chiều rộng cho khối text */
+    width: 100%;
 }
 .mission-item-group {
     display: flex;
@@ -213,12 +241,7 @@ body, html {
     transition: width 0.5s ease;
     border-radius: 5px;
 }
-.main__illustration {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
+
 
 /* --- FOOTER STYLES --- */
 .footer {
@@ -239,21 +262,18 @@ body, html {
 
 /* --- MEDIA QUERIES --- */
 @media (max-width: 1024px) {
-    .main.learn-page {
-        display: flex;
-        flex-direction: column;
+    .main.learn-page, .main.mission-page {
+        flex-direction: column; 
         align-items: center;
     }
-    .main.mission-page {
-        grid-template-columns: 1fr;
-        justify-content: center;
-    }
-    .main__illustration {
-        order: -1;
-        max-width: 120px;
+    /* Đảm bảo ảnh luôn ở trên cùng trên mobile/tablet */
+    .main__illustration, .main__content {
+        order: -1 !important; 
+        max-width: 400px;
         margin: 0 auto;
     }
-    .main__mission-details {
+    .main__sidebar, .main__mission-details {
+        order: initial;
         max-width: 500px;
         margin: 0 auto;
         width: 100%;

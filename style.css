@@ -137,7 +137,7 @@ body, html {
 }
 .main__illustration-image {
     width: 100%;
-    max-width: 500px; /* Ảnh nhỏ hơn, tương xứng với kích thước nút */
+    max-width: 150px; /* Ảnh nhỏ hơn, tương xứng với kích thước nút */
     height: auto;
     border-radius: 16px;
     object-fit: contain; 
@@ -307,6 +307,7 @@ body, html {
         text-align: center;
     }
 }
+
 
 
 

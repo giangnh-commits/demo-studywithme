@@ -1,198 +1,168 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome - Trang Học Tập</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --color-primary-bg: #84d9ba;
-            --color-dark-text: #1a1a1a;
-            --color-footer-bg: #f8f8f8;
-            --color-logo-bg: #ffffff;
-            --color-logo-border: #FFDAB9;
-            --font-main: 'Inter', sans-serif;
-            --footer-height: 72px;
-        }
-
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: var(--font-main);
-            color: var(--color-dark-text);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .header__logo {
-            margin: 0;
-            display: flex;
-            align-items: center;
-            padding: 10px 15px;
-            background-color: var(--color-logo-bg);
-            border-radius: 9999px;
-            border: 1px solid var(--color-logo-border);
-            box-shadow: 0 0 10px rgba(255, 218, 185, 0.5);
-        }
-
-        .header__logo-image {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            object-fit: cover;
-            background-color: #F08080; 
-            display: inline-block;
-        }
-
-        .header__logo-text {
-            margin-left: 10px;
-            font-weight: 600;
-            color: var(--color-dark-text);
-        }
-
-        .header__nav {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .header__button {
-            background: none;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            transition: color 0.2s, background-color 0.2s, border-radius 0.2s;
-            border-radius: 8px;
-            
-            /* SỬA LỖI HIỂN THỊ CỦA THẺ <a> */
-            text-decoration: none; /* Xóa gạch chân */
-            display: inline-block; /* Cho phép áp dụng padding/margin như button */
-            color: var(--color-dark-text); /* Đảm bảo màu chữ chính xác */
-        }
-
-        .header__button:hover {
-            color: white;
-            background-color: #8db5ad;
-            border-radius: 8px;
-        }
-
-        .main {
-            flex-grow: 1;
-            background-color: var(--color-primary-bg);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .main__title {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            letter-spacing: 2px;
-        }
-
-        .main__subtitle {
-            font-size: 2rem;
-            font-weight: 400;
-            margin-top: 0;
-        }
-
-        .footer {
-            height: var(--footer-height);
-            background-color: var(--color-footer-bg);
-            color: var(--color-dark-text);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 14px;
-            padding: 0 5%;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .footer__contact-info {
-            display: flex;
-            gap: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                padding: 15px 5%;
-            }
-
-            .header__nav {
-                margin-top: 15px;
-                flex-direction: column;
-                gap: 10px;
-                width: 100%;
-                align-items: center;
-            }
-
-            .header__button {
-                width: 100%;
-                text-align: center;
-            }
-
-            .main__title {
-                font-size: 3rem;
-            }
-
-            .main__subtitle {
-                font-size: 1.5rem;
-            }
-
-            .footer__contact-info {
-                flex-direction: column;
-                gap: 5px;
-                text-align: center;
-            }
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Trang Học Tập</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary-bg: #84d9ba;
+            --color-dark-text: #1a1a1a;
+            --color-footer-bg: #f8f8f8;
+            --color-logo-bg: #ffffff;
+            --color-logo-border: #FFDAB9;
+            --font-main: 'Inter', sans-serif;
+            --footer-height: 72px;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-main);
+            color: var(--color-dark-text);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .header__logo {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: var(--color-logo-bg);
+            border-radius: 9999px;
+            border: 1px solid var(--color-logo-border);
+            box-shadow: 0 0 10px rgba(255, 218, 185, 0.5);
+        }
+        .header__logo-image {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #F08080; 
+            display: inline-block;
+        }
+        .header__logo-text {
+            margin-left: 10px;
+            font-weight: 600;
+            color: var(--color-dark-text);
+        }
+        .header__nav {
+            display: flex;
+            gap: 20px;
+        }      
+        .header__button {
+            background: none;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-dark-text);
+            transition: color 0.2s, background-color 0.2s, border-radius 0.2s;
+            border-radius: 8px;
+        }
+        .header__button:hover {
+            color: white;
+            background-color: #8db5ad;
+            border-radius: 8px;
+        }
+        .main {
+            flex-grow: 1;
+            background-color: var(--color-primary-bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .main__title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+        .main__subtitle {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-top: 0;
+        }
+        .footer {
+            height: var(--footer-height);
+            background-color: var(--color-footer-bg);
+            color: var(--color-dark-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            padding: 0 5%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .footer__contact-info {
+            display: flex;
+            gap: 30px;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 15px 5%;
+            }
+            .header__nav {
+                margin-top: 15px;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                align-items: center;
+            }
+            .header__button {
+                width: 100%;
+                text-align: center;
+            }
+            .main__title {
+                font-size: 3rem;
+            }
+            .main__subtitle {
+                font-size: 1.5rem;
+            }
+            .footer__contact-info {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <header class="header">
-        <figure class="header__logo">
-            <img src="https://placehold.co/32x32/FFDAB9/FFDAB9?text=L" alt="Logo Trang Học Tập" class="header__logo-image">
-            <figcaption class="header__logo-text">Logo</figcaption>
-        </figure>
-        <nav class="header__nav">
-            <button class="header__button">Home</button>
-            <a href="learn.html" class="header__button">Learn</a>
-            <button class="header__button">Communication</button>
-            <button class="header__button">Personal Information</button>
-        </nav>
-    </header>
-
-    <main class="main">
-        <h1 class="main__title">WELCOME!</h1>
-        <p class="main__subtitle">Study with me</p>
-    </main>
-
-    <footer class="footer">
-        <div class="footer__contact-info">
-            <span>Email: giangnguyen@studysite.com</span>
-            <span>Số điện thoại: 0363 637 899</span>
-        </div>
-    </footer>
-
+    <header class="header">
+        <figure class="header__logo">
+            <img src="https://placehold.co/32x32/FFDAB9/FFDAB9?text=L" alt="Logo Trang Học Tập" class="header__logo-image">
+            <figcaption class="header__logo-text">Logo</figcaption>
+        </figure>
+        <nav class="header__nav">
+            <button class="header__button">Home</button>
+            <button class="header__button">Learn</button>
+            <button class="header__button">Communication</button>
+            <button class="header__button">Personal Information</button>
+        </nav>
+    </header>
+    <main class="main">
+        <h1 class="main__title">WELCOME!</h1>
+        <p class="main__subtitle">Study with me</p>
+    </main>
+    <footer class="footer">
+        <div class="footer__contact-info">
+            <span>Email: giangnguyen@studysite.com</span>
+            <span>Số điện thoại: 0363 637 899</span>
+        </div>
+    </footer>
 </body>
 </html>
-
-
-

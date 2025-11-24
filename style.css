@@ -63,7 +63,7 @@ body, html {
     border: none;
     padding: 10px 15px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 32px;
     font-weight: 600;
     color: var(--color-dark-text);
     transition: color 0.2s, background-color 0.2s, border-radius 0.2s;
@@ -137,7 +137,7 @@ body, html {
 }
 .main__illustration-image {
     width: 100%;
-    max-width: 150px; /* Ảnh nhỏ hơn, tương xứng với kích thước nút */
+    max-width: 500px; /* Ảnh nhỏ hơn, tương xứng với kích thước nút */
     height: auto;
     border-radius: 16px;
     object-fit: contain; 
@@ -183,7 +183,7 @@ body, html {
     align-items: center;
     padding: 20px;
     order: 1; /* Khối ảnh nằm bên trái */
-    max-width: 300px; /* Giới hạn kích thước ảnh */
+    max-width: 500px; /* Giới hạn kích thước ảnh */
     width: 100%;
 }
 .main__mission-details {
@@ -307,4 +307,5 @@ body, html {
         text-align: center;
     }
 }
+
 
